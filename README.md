@@ -33,3 +33,5 @@ This notebook reads in the external skip-gram model files (one for each problem 
 
 ### `wordProblemSimilarities.py`
 This code identifies similarities and performs t-SNE dimensionality reduction, just like `understandingMultiplyingSimilarities.py`, but for the "Multiplying Fractions by Fractions Word Problems" dataset.
+
+## R Code
