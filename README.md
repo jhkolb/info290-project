@@ -35,3 +35,12 @@ This notebook reads in the external skip-gram model files (one for each problem 
 This code identifies similarities and performs t-SNE dimensionality reduction, just like `understandingMultiplyingSimilarities.py`, but for the "Multiplying Fractions by Fractions Word Problems" dataset.
 
 ## R Code
+
+### `preparedata.R`
+This code mainly prepare raw data; its input is raw data of responses with their frequencies, and it extracts top 5 most frequent answers from each seed for manual misconception analysis of categorizing responses based on their underlying misconceptions.
+
+### `gensim_analysis_final.R`
+This code receives the csv with the main responses and the most-similar responses to that main response, from `understandingMultiplyingSimilarities.py` and the gensim model. Then, it finds the top 5 most similar responses per seed, maps explanations/reasoning behind those answers found previously from manual misconception analysis and categorization, and outputs a csv for manual verification of whether the gensim model correctly generated most-similar responses based on an underlying common misconception.
+
+### `GroupByError.R`
+This code receives a csv with top 5 most frequent responses per seed, and the reasoning/explanation behind each response. Then, it groups the responses based on their problem_type, and then within the groups sorts the responses based on their common reasoning/explanations. The outputted csv is later used for better optimization of hyperparameters of gensim model for each problem type.
